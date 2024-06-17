@@ -24,3 +24,18 @@ def guess_number(low, high, num_attempts):
     :param num_attempts: The number of attempts the user is given to guess the correct number.
     :returns: True if the user answers any attempt correctly, False otherwise.
     """
+    import random
+
+    number_computer=random.randint(low, high)
+    for i in range(num_attempts):
+        number_person=input(f"Guess a number from 1 to 10, you have {num_attempts} attempts total: ")
+        if number_person.isnumeric():
+            if int(number_person) == int(number_computer):
+                return True
+        else:
+            continue
+   
+    return False
+
+
+
